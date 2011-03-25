@@ -27,28 +27,25 @@ define('CI_VERSION', '2.0');
 //define('AJAX_REQUEST',false);
 define('DEBUG',false);
 
-require(BASEPATH.'core/Common'.EXT);
-require(BASEPATH.'core/Compat'.EXT);
-require(APPPATH.'config/constants'.EXT);
+require BASEPATH.'core/Common'.EXT;
+require APPPATH.'config/constants'.EXT;
 
 $CFG =& load_class('Config', 'core');
 $URI =& load_class('URI', 'core');
 $IN	=& load_class('Input', 'core');	
 $OUT =& load_class('Output', 'core');
 $LANG =& load_class('Lang', 'core');
-require(BASEPATH.'core/Base5'.EXT);
 
 $loader = load_class('Loader', 'core');
 
 // Load the base controller class
 require BASEPATH.'core/Controller'.EXT;
 
-
-class A extends Controller {
-   
+function &get_instance()
+{
+    return CI_Controller::get_instance();
 }
 
-$EE = new A;
-$EE->core->_initialize_core();
-	
+class EE_Bootstrap extends CI_Controller {}
 
+$EE = new EE_Bootstrap;
