@@ -35,6 +35,7 @@ $URI =& load_class('URI', 'core');
 $IN	=& load_class('Input', 'core');	
 $OUT =& load_class('Output', 'core');
 $LANG =& load_class('Lang', 'core');
+$SEC =& load_class('Security', 'core');
 
 $loader = load_class('Loader', 'core');
 
