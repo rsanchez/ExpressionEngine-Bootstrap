@@ -47,6 +47,13 @@ function &get_instance()
     return CI_Controller::get_instance();
 }
 
-class EE_Bootstrap extends CI_Controller {}
+function ee()
+{
+    static $EE;
+    if ( ! $EE) $EE = get_instance();
+    return $EE;
+}
 
-$EE = new EE_Bootstrap;
+$loader->library('core');
+
+ee()->core->bootstrap();
