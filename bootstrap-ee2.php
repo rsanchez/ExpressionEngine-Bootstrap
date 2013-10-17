@@ -54,6 +54,10 @@ function ee()
     return $EE;
 }
 
+class EE_Bootstrap_Controller extends CI_Controller {}
+
+$EE = new EE_Bootstrap_Controller;
+
 $loader->library('core');
 
 ee()->core->bootstrap();
