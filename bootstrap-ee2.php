@@ -59,4 +59,7 @@ function ee()
 new CI_Controller();
 
 ee()->load->library('core');
-ee()->core->bootstrap();
+
+if(method_exists ( ee()->core , 'bootstrap' )) {
+  ee()->core->bootstrap();
+}
