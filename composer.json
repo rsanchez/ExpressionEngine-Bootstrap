@@ -1,0 +1,10 @@
+{
+    "name": "eecli/bootstrap",
+    "description": "Bootstrap the ExpressionEngine environment",
+    "authors": [
+        {
+            "name": "Rob Sanchez",
+            "email": "info@robsanchez.com"
+        }
+    ]
+}
