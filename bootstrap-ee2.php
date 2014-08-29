@@ -60,3 +60,14 @@ new CI_Controller();
 
 ee()->load->library('core');
 ee()->core->bootstrap();
+
+// if you are loading template library or addon library you'll need this
+ee()->core->native_plugins = array('magpie', 'markdown', 'rss_parser', 'xml_encode');
+ee()->core->native_modules = array('blacklist', 'channel', 'comment', 'commerce', 'email', 'emoticon', 'file', 'forum', 'ip_to_nation', 'jquery', 'mailinglist', 'member', 'metaweblog_api', 'moblog', 'pages', 'query', 'referrer', 'rss', 'rte', 'search', 'simple_commerce', 'stats', 'wiki');
+
+ee()->load->library('remember');
+ee()->load->library('localize');
+ee()->load->library('session');
+ee()->load->library('user_agent');
+ee()->lang->loadfile('core');
+ee()->load->helper('compat');
