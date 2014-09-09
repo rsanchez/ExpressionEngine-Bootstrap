@@ -51,9 +51,7 @@ function &get_instance()
 
 function ee()
 {
-  static $EE;
-  if ( ! $EE) $EE = get_instance();
-  return $EE;
+  return get_instance();
 }
 
 new CI_Controller();
