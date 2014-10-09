@@ -63,7 +63,10 @@ if ( ! isset($_SERVER['REMOTE_ADDR']))
 new CI_Controller();
 
 ee()->load->library('core');
-ee()->core->bootstrap();
+
+if (method_exists(ee()->core, 'bootstrap')) {
+  ee()->core->bootstrap();
+}
 
 // if you are loading template library or addon library you'll need this
 ee()->core->native_plugins = array('magpie', 'markdown', 'rss_parser', 'xml_encode');
