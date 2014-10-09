@@ -54,6 +54,12 @@ function ee()
   return get_instance();
 }
 
+// required by the input class
+if ( ! isset($_SERVER['REMOTE_ADDR']))
+{
+  $_SERVER['REMOTE_ADDR'] = '127.0.0.1';
+}
+
 new CI_Controller();
 
 ee()->load->library('core');
