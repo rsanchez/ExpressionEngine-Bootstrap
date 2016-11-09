@@ -38,6 +38,7 @@ $SEC =& load_class('Security', 'core');
 $IN	=& load_class('Input', 'core');	
 $OUT =& load_class('Output', 'core');
 $LANG =& load_class('Lang', 'core');
+$RTR =& load_class('Router', 'core');
 
 $loader = load_class('Loader', 'core');
 
