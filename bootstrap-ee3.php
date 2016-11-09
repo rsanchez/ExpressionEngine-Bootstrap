@@ -19,7 +19,15 @@ define('CI_VERSION', '2.0');
 define('DEBUG', isset($debug) ? $debug : 0);
 define('SYSPATH', $system_path);
 
-require_once $system_path.'ee/legacy/config/constants.php';
+if (file_exists($system_path.'ee/legacy/config/constants.php'))
+{
+    require_once $system_path.'ee/legacy/config/constants.php';
+}
+else
+{
+    require_once $system_path.'ee/EllisLab/ExpressionEngine/Config/constants.php';
+}
+
 require_once $system_path.'ee/EllisLab/ExpressionEngine/Boot/boot.common.php';
 require_once $system_path.'ee/EllisLab/ExpressionEngine/Core/Autoloader.php';
 require_once $system_path.'ee/legacy/core/Controller.php';
