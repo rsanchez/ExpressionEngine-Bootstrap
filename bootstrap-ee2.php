@@ -69,6 +69,14 @@ if (method_exists(ee()->core, 'bootstrap')) {
   ee()->core->bootstrap();
 }
 
+/*
+ * ------------------------------------------------------
+ *  Load the autoloader and register it
+ * ------------------------------------------------------
+ */
+require(APPPATH.'../EllisLab/ExpressionEngine/Core/Autoloader.php');
+Autoloader::getInstance()->register();
+
 // if you are loading template library or addon library you'll need this
 ee()->core->native_plugins = array('magpie', 'markdown', 'rss_parser', 'xml_encode');
 ee()->core->native_modules = array('blacklist', 'channel', 'comment', 'commerce', 'email', 'emoticon', 'file', 'forum', 'ip_to_nation', 'jquery', 'mailinglist', 'member', 'metaweblog_api', 'moblog', 'pages', 'query', 'referrer', 'rss', 'rte', 'search', 'simple_commerce', 'stats', 'wiki');
@@ -77,5 +85,7 @@ ee()->load->library('remember');
 ee()->load->library('localize');
 ee()->load->library('session');
 ee()->load->library('user_agent');
+ee()->load->library('stats');
 ee()->lang->loadfile('core');
 ee()->load->helper('compat');
+
